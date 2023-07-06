@@ -6,8 +6,9 @@
   
 Obtener codigo de Factor de Doble autenticación del tipo TOPT (Time-based One Time Password) como Google y Microsoft Authenticator  
 
-*Read this in other languages: [English](README.md), [Português](README.pr.md), [Español](README.es.md)*
-
+*Read this in other languages: [English](Manual_authenticator.md), [Português](Manual_authenticator.pr.md), [Español](Manual_authenticator.es.md)*
+  
+![banner](imgs/banner_authenticator.jpg)
 ## How to install this module
   
 To install the module in Rocketbot Studio, it can be done in two ways:
@@ -15,23 +16,14 @@ To install the module in Rocketbot Studio, it can be done in two ways:
 2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
 
 
-## Overview
+## Description of the commands
 
-
-1. Get code  
-Get the authentication code.  
-
-
-
-
-----
-### OS
-
-- windows
-
-### Dependencies
-
-### License
+### Get code
   
-![MIT](https://camo.githubusercontent.com/107590fac8cbd65071396bb4d04040f76cde5bde/687474703a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e7376673f7374796c653d666c61742d737175617265)  
-[MIT](http://opensource.org/licenses/mit-license.ph)
+Get the authentication code.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Secret|Enter the password.|secret32|
+|Number of digits (Optional)|Number of digits that the returned code will have.|6|
+|Interval|Number of digits that the returned code will have.|30|
+|Assign result to variable|Assign connection result to variable.|result|
