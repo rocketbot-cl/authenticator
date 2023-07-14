@@ -19,7 +19,10 @@ To install the module in Rocketbot Studio, it can be done in two ways:
 
 
 1. Get code  
-Get the authentication code.  
+Get the authentication code.
+
+2. Get code from QR  
+Read a QR code from a PNG file and get the authentication code.  
 
 
 
