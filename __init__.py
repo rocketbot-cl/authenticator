@@ -34,7 +34,6 @@ if sys.maxsize > 2**32 and cur_path_x64 not in sys.path:
 elif sys.maxsize <= 2**32 and cur_path_x86 not in sys.path:
         sys.path.append(cur_path_x86)
 
-import time
 import pyotp
 
 module = GetParams("module")
@@ -57,8 +56,35 @@ if module == "get_code":
     try:
         totp = pyotp.TOTP(key, digits = digits, interval=interval)
         code = totp.now()
-        print(totp.now())
         SetVar(result, code)
+    except Exception as e:
+        traceback.print_exc()
+        SetVar(result, False)
+        raise e
+    
+if module == "get_code_QR":
+    path = GetParams("path")
+    result = GetParams("result")
+    
+    def read_qr_code(filename):
+        import cv2
+
+        img = cv2.imread(filename)
+        detect = cv2.QRCodeDetector()
+        value, points, straight_qrcode = detect.detectAndDecode(img)
+        
+        return value
+    
+    try:
+        data = read_qr_code(path)
+        if data:
+            totp = pyotp.parse_uri(data)
+            
+            code = totp.now()
+            SetVar(result, code)   
+        else:
+            SetVar(result, "QR code cannot be read")   
+  
     except Exception as e:
         traceback.print_exc()
         SetVar(result, False)

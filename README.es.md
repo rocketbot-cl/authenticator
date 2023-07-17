@@ -19,7 +19,10 @@ Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
 
 
 1. Obtener codigo  
-Obtén el codigo de autenticación.  
+Obtén el codigo de autenticación.
+
+2. Obtener código desde QR  
+Lee un código QR a partir de un archivo PNG y obtén el codigo de autenticación.  
 
 
 
