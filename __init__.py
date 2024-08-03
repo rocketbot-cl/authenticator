@@ -43,23 +43,31 @@ if module == "get_code":
     digits = GetParams("digits")
     interval = GetParams("interval")
     result = GetParams("result")
-    
-    if not digits:
-        digits = 6
-    else:
-        digits = int(digits)
-    if not interval:
-        interval = 30
-    else:
-        interval = int(interval)
-    
+    issuer = GetParams("isuser")
+    name = GetParams("name")
+    digest = GetParams("digest")
+    args = {
+        "s": key,
+        "digits": 6,
+        "interval": 30,
+    }
+    if digits:
+        args["digits"] = int(digits)
+
+    if interval:
+        args["interval"] = int(interval)
+
+    if issuer:
+        args["issuer"] = issuer
+
+    if name:
+        args["name"] = name
+
+    if digest:
+        args["digest"] = digest
+
     try:
-        # otpauth://totp/20200033:rpa?secret=JI3GQTDUNV3XGOCDKBLHMMBWOYYWW6L2&digits=6&algorithm=SHA1&issuer=20200033&period=30
-        
-        
-        #totp = pyotp.TOTP(s="JI3GQTDUNV3XGOCDKBLHMMBWOYYWW6L2", digits = 6, interval=interval, issuer="20200033", name="rpa", digest="sha1")
-        
-        totp = pyotp.TOTP(key, digits = digits, interval=interval)
+        totp = pyotp.TOTP(**args)
         code = totp.now()
         SetVar(result, code)
     except Exception as e:
