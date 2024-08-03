@@ -7,7 +7,7 @@
         "pr": "Obtenha o código de Fator de Autenticação Dupla do tipo TOPT (Time-based One Time Password) como Google and Microsoft Authenticator"
     },
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "license": "MIT",
     "homepage": "http://rocketbot.com/",
     "linux": false,
@@ -65,7 +65,7 @@
                             "pr": "secret32"
                         },
                         "id": "secret",
-                        "css": "col-md-6"
+                        "css": "col-md-12"
                     },
                     {
                         "type": "input",
@@ -100,9 +100,9 @@
                             "pr": "Intervalo"
                           },
                           "description": {
-                            "es": "Cantidad de dígitos que tendrá el código retornado.",
-                            "en": "Number of digits that the returned code will have.",
-                            "pr": "Quantidade de dígitos que terá o código retornado."
+                            "es": "Intervalo de tiempo en segundos para renovar el código retornado.",
+                            "en": "Time interval in seconds to refresh the returned code.",
+                            "pr": "Intervalo de tempo em segundos para atualizar o código retornado."
                           },
                         "placeholder": {
                             "es": "30",
@@ -115,6 +115,66 @@
                             "pr": "Se deixado em branco, o código retornado será atualizado a cada 30 segundos."
                         },
                         "id": "interval",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Issuer (Opcional)",
+                            "en": "Issuer (Optional)",
+                            "pr": "Issuer (opcional)"
+                          },
+                          "description": {
+                            "es": "Issuer del código retornado.",
+                            "en": "Issuer of the returned code.",
+                            "pr": "Emissor do código retornado."
+                          },
+                        "placeholder": {
+                            "es": "6330123",
+                            "en": "6343311",
+                            "pr": "6231251"
+                        },
+                        "id": "issuer",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Name (Opcional)",
+                            "en": "Name (Optional)",
+                            "pr": "Name (opcional)"
+                          },
+                          "description": {
+                            "es": "Nombre de la aplicación o servicio que solicita el código.",
+                            "en": "Name of the application or service requesting the code.",
+                            "pr": "Nome da aplicação ou serviço solicitando o código."
+                          },
+                        "placeholder": {
+                            "es": "6330123",
+                            "en": "6343311",
+                            "pr": "6231251"
+                        },
+                        "id": "name",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Digest (Opcional)",
+                            "en": "Digest (Optional)",
+                            "pr": "Digest (opcional)"
+                          },
+                          "description": {
+                            "es": "Digest del código retornado.",
+                            "en": "Digest of the returned code.",
+                            "pr": "Digest do código retornado."
+                          },
+                        "placeholder": {
+                            "es": "sha1",
+                            "en": "sha1",
+                            "pr": "sha1"
+                        },
+                        "id": "name",
                         "css": "col-md-6"
                     },
                     {
